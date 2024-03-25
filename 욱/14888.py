@@ -1,14 +1,5 @@
 import sys
 
-input = sys.stdin.readline
-N = int(input())
-num = list(map(int, input().split()))
-plus, minus, multiply, divide = list(map(int, input().split()))
-
-
-maximum = -1e9
-minimum = 1e9
-
 
 def dfs(depth, total, plus, minus, multiply, divide):
     global maximum, minimum
@@ -32,6 +23,11 @@ def dfs(depth, total, plus, minus, multiply, divide):
 
 
 if __name__ == "__main__":
+    input = sys.stdin.readline
+    N = int(input())
+    num = list(map(int, input().split()))
+    plus, minus, multiply, divide = list(map(int, input().split()))
+    maximum = -1e9
+    minimum = 1e9
+
     dfs(1, num[0], plus, minus, multiply, divide)
-    print(maximum)
-    print(minimum)
